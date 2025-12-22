@@ -2,6 +2,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'Login/login.dart';
 
+void main() {
+  runApp(SplashScreen());
+}
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
