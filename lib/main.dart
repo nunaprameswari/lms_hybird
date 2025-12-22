@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset("assets/image/logohybird.png", width: 180),
+            Image.asset("assets/image/logohybird.png", width: 400),
             const SizedBox(height: 12),
           ],
         ),
