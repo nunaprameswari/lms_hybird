@@ -18,7 +18,6 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    // Durasi splash screen (3 detik)
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
@@ -30,27 +29,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFB74A4A), // warna merah sesuai gambar
+      backgroundColor: const Color(0x0b0547),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Logo
             Image.asset(
               'assets/images/logo_celobe.png',
               width: 180,
             ),
             const SizedBox(height: 12),
-
-            // Subtitle
-            const Text(
-              'Learning Management System',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 14,
-                letterSpacing: 1,
-              ),
-            ),
           ],
         ),
       ),
