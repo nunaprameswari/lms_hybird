@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              'assets/images/logo_celobe.png',
+              "ssets/image/logohybird.png",
               width: 180,
             ),
             const SizedBox(height: 12),
