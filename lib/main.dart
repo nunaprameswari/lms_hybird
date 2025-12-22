@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'Login/login.dart';
 
 void main() {
-  runApp(SplashScreen());
+  runApp(
+    const MaterialApp(home: SplashScreen(), debugShowCheckedModeBanner: false),
+  );
 }
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -29,15 +31,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0x0b0547),
+      backgroundColor: const Color(0xFF0B0547),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(
-              "ssets/image/logohybird.png",
-              width: 180,
-            ),
+            Image.asset("assets/image/logohybird.png", width: 180),
             const SizedBox(height: 12),
           ],
         ),
