@@ -45,7 +45,7 @@ class _LoginLmsState extends State<LoginLms> {
                     Center(
                       child: CircleAvatar(
                         radius: 30,
-                        backgroundColor: const Color(0xFFB74A4A),
+                        backgroundColor: const Color(0xFF0B0547),
                         child: Image.asset(
                           'assets/images/logohybird',
                           width: 30,
@@ -73,7 +73,7 @@ class _LoginLmsState extends State<LoginLms> {
                         labelText: 'Email 365',
                         border: UnderlineInputBorder(),
                         focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFB74A4A)),
+                          borderSide: BorderSide(color: Color(0xFF0B0547)),
                         ),
                       ),
                     ),
@@ -87,7 +87,7 @@ class _LoginLmsState extends State<LoginLms> {
                         labelText: 'Password',
                         border: const UnderlineInputBorder(),
                         focusedBorder: const UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFB74A4A)),
+                          borderSide: BorderSide(color: Color(0xFF0B0547)),
                         ),
                         suffixIcon: IconButton(
                           icon: Icon(
@@ -112,7 +112,7 @@ class _LoginLmsState extends State<LoginLms> {
                       height: 50,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFB74A4A),
+                          backgroundColor: const Color(0xFF0B0547),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),
                           ),
@@ -135,7 +135,7 @@ class _LoginLmsState extends State<LoginLms> {
                         onPressed: () {},
                         child: const Text(
                           'Bantuan ?',
-                          style: TextStyle(color: Color(0xFFB74A4A)),
+                          style: TextStyle(color: Color(0xFF0B0547)),
                         ),
                       ),
                     ),
@@ -164,7 +164,7 @@ class WavePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFFB74A4A)
+      ..color = const Color(0xFF0B0547)
       ..style = PaintingStyle.fill;
 
     final path = Path();
