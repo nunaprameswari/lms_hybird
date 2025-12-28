@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+class Profile extends StatelessWidget {
+  const Profile({super.key});
 
   final Color primaryColor = const Color(0xFFB74A4A);
 

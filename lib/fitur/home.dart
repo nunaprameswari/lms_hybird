@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'profile.dart';
 
 class Beranda extends StatelessWidget {
   const Beranda({super.key});
