@@ -1,9 +1,8 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class Beranda extends StatelessWidget {
+  const Beranda({super.key});
 
   final Color primaryColor = const Color(0xFF0B0547);
 
