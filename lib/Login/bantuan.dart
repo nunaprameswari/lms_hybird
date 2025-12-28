@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TombolBantuan extends StatefulWidget {
-  const TombolBantuan({Key? key}) : super(key: key);
+  const TombolBantuan({super.key});
 
   @override
   State<TombolBantuan> createState() => _TombolBantuanState();
