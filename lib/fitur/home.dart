@@ -31,117 +31,115 @@ class Beranda extends StatelessWidget {
       ),
 
       body: SafeArea(
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // ===== HEADER =====
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(16),
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 103, 71, 248), // biru play
-                  // borderRadius: BorderRadius.vertical(
-                  //   bottom: Radius.circular(20),
-                  // ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text('Hallo,', style: TextStyle(color: Colors.grey)),
-                        Text(
-                          'DANDY CANDRA PRAITAMA',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Profile(),
-                          ),
-                        );
-                      },
-                      child: Chip(
-                        backgroundColor: Color(0xFF0B0547),
-                        label: const Text(
-                          'MAHASISWA',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        avatar: const Icon(Icons.person, color: Colors.white),
-                      ),
-                    ),
-                  ],
-                ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // ===== HEADER =====
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 103, 71, 248), // biru play
+                // borderRadius: BorderRadius.vertical(
+                //   bottom: Radius.circular(20),
+                // ),
               ),
-
-              const SizedBox(height: 20),
-
-              // ===== TUGAS =====
-              const Text(
-                'Tugas Yang Akan Datang',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 10),
-
-              _tugasCard(),
-
-              const SizedBox(height: 20),
-
-              // ===== PENGUMUMAN =====
-              Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    'Pengumuman Terakhir',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text('Hallo,', style: TextStyle(color: Colors.grey)),
+                      Text(
+                        'DANDY CANDRA PRAITAMA',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
                   ),
-                  Text('Lihat Semua', style: TextStyle(color: Colors.blue)),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Profile(),
+                        ),
+                      );
+                    },
+                    child: Chip(
+                      backgroundColor: Color(0xFF0B0547),
+                      label: const Text(
+                        'MAHASISWA',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      avatar: const Icon(Icons.person, color: Colors.white),
+                    ),
+                  ),
                 ],
               ),
+            ),
 
-              const SizedBox(height: 10),
+            const SizedBox(height: 20),
 
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  'assets/images/pengumuman.png',
-                  fit: BoxFit.cover,
+            // ===== TUGAS =====
+            const Text(
+              'Tugas Yang Akan Datang',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+
+            _tugasCard(),
+
+            const SizedBox(height: 20),
+
+            // ===== PENGUMUMAN =====
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text(
+                  'Pengumuman Terakhir',
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
+                Text('Lihat Semua', style: TextStyle(color: Colors.blue)),
+              ],
+            ),
+
+            const SizedBox(height: 10),
+
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(
+                'assets/images/pengumuman.png',
+                fit: BoxFit.cover,
               ),
+            ),
 
-              const SizedBox(height: 20),
+            const SizedBox(height: 20),
 
-              // ===== PROGRES KELAS =====
-              const Text(
-                'Progres Kelas',
-                style: TextStyle(fontWeight: FontWeight.bold),
+            // ===== PROGRES KELAS =====
+            const Text(
+              'Progres Kelas',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                children: [
+                  _progressItem('DESAIN ANTARMUKA & PENGALAMAN PENGGUNA', 0.89),
+                  _progressItem('KEWARGANEGARAAN', 0.86),
+                  _progressItem('SISTEM OPERASI', 0.90),
+                  _progressItem('PEMROGRAMAN MULTIMEDIA INTERAKTIF', 0.90),
+                  _progressItem('BAHASA INGGRIS: BUSINESS & SCIENTIFIC', 0.90),
+                  _progressItem('OLAH RAGA', 0.90),
+                  const SizedBox(height: 80),
+                ],
               ),
-
-              const SizedBox(height: 10),
-
-              _progressItem('DESAIN ANTARMUKA & PENGALAMAN PENGGUNA', 0.89),
-              _progressItem('KEWARGANEGARAAN', 0.86),
-              _progressItem('SISTEM OPERASI', 0.90),
-              _progressItem('PEMROGRAMAN MULTIMEDIA INTERAKTIF', 0.90),
-              _progressItem('BAHASA INGGRIS: BUSINESS & SCIENTIFIC', 0.90),
-              _progressItem('OLAH RAGA', 0.90),
-
-              const SizedBox(
-                height: 80,
-              ), // ruang agar tidak tertutup bottom nav
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
