@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'bantuan.dart';
 
 class LoginLms extends StatefulWidget {
   const LoginLms({super.key});
@@ -132,7 +133,18 @@ class _LoginLmsState extends State<LoginLms> {
                     // Bantuan
                     Center(
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(30),
+                              ),
+                            ),
+                            builder: (context) => const TombolBantuan(),
+                          );
+                        },
                         child: const Text(
                           'Bantuan ?',
                           style: TextStyle(color: Color(0xFF0B0547)),

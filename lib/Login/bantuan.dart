@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BantuanBottomSheet extends StatefulWidget {
-  const BantuanBottomSheet({Key? key}) : super(key: key);
+class TombolBantuan extends StatefulWidget {
+  const TombolBantuan({Key? key}) : super(key: key);
 
   @override
-  State<BantuanBottomSheet> createState() => _BantuanBottomSheetState();
+  State<TombolBantuan> createState() => _TombolBantuanState();
 }
 
-class _BantuanBottomSheetState extends State<BantuanBottomSheet> {
+class _TombolBantuanState extends State<TombolBantuan> {
   bool isEnglish = false;
 
   @override
