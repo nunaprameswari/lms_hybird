@@ -52,13 +52,23 @@ class Beranda extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Chip(
-                    backgroundColor: primaryColor,
-                    label: const Text(
-                      'MAHASISWA',
-                      style: TextStyle(color: Colors.white),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Profile(),
+                        ),
+                      );
+                    },
+                    child: Chip(
+                      backgroundColor: primaryColor,
+                      label: const Text(
+                        'MAHASISWA',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      avatar: const Icon(Icons.person, color: Colors.white),
                     ),
-                    avatar: const Icon(Icons.person, color: Colors.white),
                   ),
                 ],
               ),
