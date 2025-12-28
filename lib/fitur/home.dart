@@ -112,7 +112,7 @@ class Beranda extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(
-                'assets/images/pengumuman.png',
+                'assets/images/gmbrpengumuman.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -129,13 +129,36 @@ class Beranda extends StatelessWidget {
               child: ListView(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 children: [
-                  _progressItem('DESAIN ANTARMUKA & PENGALAMAN PENGGUNA', 0.89),
-                  _progressItem('KEWARGANEGARAAN', 0.86),
-                  _progressItem('SISTEM OPERASI', 0.90),
-                  _progressItem('PEMROGRAMAN MULTIMEDIA INTERAKTIF', 0.90),
-                  _progressItem('BAHASA INGGRIS: BUSINESS & SCIENTIFIC', 0.90),
-                  _progressItem('OLAH RAGA', 0.90),
-                  const SizedBox(height: 80),
+                  _progressItem(
+                    imagePath: 'assets/images/uiux.png',
+                    title: 'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
+                    value: 0.89,
+                  ),
+                  _progressItem(
+                    imagePath: 'assets/images/pkn.png',
+                    title: 'KEWARGANEGARAAN',
+                    value: 0.86,
+                  ),
+                  _progressItem(
+                    imagePath: 'assets/images/so.png',
+                    title: 'SISTEM OPERASI',
+                    value: 0.90,
+                  ),
+                  _progressItem(
+                    imagePath: 'assets/images/pmm.png',
+                    title: 'PEMROGRAMAN MULTIMEDIA INTERAKTIF',
+                    value: 0.90,
+                  ),
+                  _progressItem(
+                    imagePath: 'assets/images/inggris.png',
+                    title: 'BAHASA INGGRIS: BUSINESS & SCIENTIFIC',
+                    value: 0.90,
+                  ),
+                  _progressItem(
+                    imagePath: 'assets/images/olahraga.png',
+                    title: 'OLAH RAGA',
+                    value: 0.90,
+                  ),
                 ],
               ),
             ),
@@ -176,24 +199,57 @@ class Beranda extends StatelessWidget {
     );
   }
 
-  Widget _progressItem(String title, double value) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Column(
+  Widget _progressItem({
+    required String imagePath,
+    required String title,
+    required double value,
+  }) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 14),
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: const TextStyle(fontSize: 12)),
-          const SizedBox(height: 6),
-          LinearProgressIndicator(
-            value: value,
-            color: Color(0xFF0B0547),
-            backgroundColor: Colors.grey.shade300,
-            minHeight: 6,
+          // ===== IMAGE =====
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.asset(
+              imagePath,
+              width: 60,
+              height: 60,
+              fit: BoxFit.cover,
+            ),
           ),
-          const SizedBox(height: 4),
-          Text(
-            '${(value * 100).toInt()}% Selesai',
-            style: const TextStyle(fontSize: 11),
+
+          const SizedBox(width: 12),
+
+          // ===== CONTENT =====
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 6),
+
+                LinearProgressIndicator(
+                  value: value,
+                  minHeight: 6,
+                  color: Colors.red.shade700,
+                  backgroundColor: Colors.grey.shade300,
+                ),
+
+                const SizedBox(height: 4),
+                Text(
+                  '${(value * 100).toInt()}% Selesai',
+                  style: const TextStyle(fontSize: 11, color: Colors.grey),
+                ),
+              ],
+            ),
           ),
         ],
       ),
