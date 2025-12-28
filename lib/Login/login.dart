@@ -72,7 +72,7 @@ class _LoginLmsState extends State<LoginLms> {
                     // Email
                     const TextField(
                       decoration: InputDecoration(
-                        labelText: 'Email 365',
+                        labelText: 'Email',
                         border: UnderlineInputBorder(),
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Color(0xFF0B0547)),
