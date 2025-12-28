@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'bantuan.dart';
+import 'package:lms_hybird/fitur/home.dart';
 
 class LoginLms extends StatefulWidget {
   const LoginLms({super.key});
@@ -119,7 +120,12 @@ class _LoginLmsState extends State<LoginLms> {
                           ),
                         ),
                         onPressed: () {
-                          // TODO: Login Action
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                            ),
+                          );
                         },
                         child: const Text(
                           'Log In',
