@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lms_hybird/fitur/profile.dart';
+import 'pengumuman.dart';
 
 class Beranda extends StatelessWidget {
   const Beranda({super.key});
@@ -127,12 +128,26 @@ class Beranda extends StatelessWidget {
               // ===== Pengumuman =====
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     'Pengumuman Terakhir',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  Text('Lihat Semua', style: TextStyle(color: Colors.blue)),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              Pengumuman(), // Sesuaikan dengan nama class di pengumuman.dart
+                        ),
+                      );
+                    },
+                    child: Text(
+                      'Lihat Semua',
+                      style: const TextStyle(color: Colors.blue),
+                    ),
+                  ),
                 ],
               ),
 
