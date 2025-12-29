@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Editprofile extends StatelessWidget {
+class Isiprofile extends StatelessWidget {
   final String name;
-  Editprofile({required this.name});
+  Isiprofile({required this.name});
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'kelas.dart';
-import 'editprofile.dart';
+import 'menutab.dart';
+import 'isiprofile.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _ProfileState extends State<Profile> {
           Column(
             children: [
               // Header Biru
-              Editprofile(name: "DANDY CANDRA PRATAMA"),
+              Isiprofile(name: "DANDY CANDRA PRATAMA"),
 
               // Spasi untuk Tab Bar yang melayang
               SizedBox(height: 40),
