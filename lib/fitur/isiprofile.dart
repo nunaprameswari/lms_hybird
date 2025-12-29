@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lms_hybird/fitur/home.dart';
 
 class Isiprofile extends StatelessWidget {
   final String name;
@@ -103,36 +104,81 @@ class CustomTabBar extends StatelessWidget {
   }
 }
 
-class CustomBottomNav extends StatelessWidget {
+class CustomBottomNav extends StatefulWidget {
+  @override
+  _CustomBottomNavState createState() => _CustomBottomNavState();
+}
+
+class _CustomBottomNavState extends State<CustomBottomNav> {
+  // Variabel untuk melacak tab mana yang sedang aktif di bottom nav
+  int _selectedIndex = 1; // Default ke "Kelas Saya" sesuai gambar
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 80,
       decoration: BoxDecoration(
         color: Color(0xFF0B0547),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ),
+        // borderRadius: BorderRadius.only(
+        // topLeft: Radius.circular(30),
+        // topRight: Radius.circular(30),
+        // ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _navItem(Icons.home_outlined, "Home"),
-          _navItem(Icons.school_outlined, "Kelas Saya"),
-          _navItem(Icons.notifications_none, "Notifikasi"),
+          _navItem(0, Icons.home, "Home"),
+          _navItem(1, Icons.school, "Kelas Saya"),
+          _navItem(2, Icons.notifications, "Notifikasi"),
         ],
       ),
     );
   }
 
-  Widget _navItem(IconData icon, String label) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, color: Colors.white),
-        Text(label, style: TextStyle(color: Colors.white, fontSize: 12)),
-      ],
+  Widget _navItem(int index, IconData icon, String label) {
+    bool isActive = _selectedIndex == index;
+
+    return InkWell(
+      onTap: () {
+        setState(() {
+          _selectedIndex = index;
+        });
+        if (index == 0) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Beranda(),
+            ), // Membuka home.dart
+          );
+        }
+        // Tambahkan logika navigasi di sini jika diperlukan, contoh:
+        // print("Pindah ke halaman $label");
+      },
+      // SplashColor memberikan efek sentuhan air saat diklik
+      splashColor: Colors.white24,
+      highlightColor: Colors.transparent,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              color: Colors.white,
+              // Memberikan ukuran sedikit lebih besar jika aktif
+              size: isActive ? 30 : 24,
+            ),
+            Text(
+              label,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 12,
+                fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
