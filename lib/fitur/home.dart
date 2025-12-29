@@ -1,6 +1,4 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'profile.dart';
 
 class Beranda extends StatelessWidget {
   const Beranda({super.key});
@@ -31,168 +29,158 @@ class Beranda extends StatelessWidget {
       ),
 
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // ===== HEADER =====
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 103, 71, 248), // biru play
-                // borderRadius: BorderRadius.vertical(
-                //   bottom: Radius.circular(20),
-                // ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text('Hallo,', style: TextStyle(color: Colors.grey)),
-                      Text(
-                        'DANDY CANDRA PRAITAMA',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // ===== Header =====
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 59, 48, 223), // biru play
+                  // borderRadius: BorderRadius.vertical(
+                  // bottom: Radius.circular(20),
+                  // ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text('Hallo,', style: TextStyle(color: Colors.grey)),
+                        Text(
+                          'DANDY CANDRA PRAITAMA',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Profile()),
-                      );
-                    },
-                    child: Chip(
-                      backgroundColor: Color(0xFF0B0547),
+                      ],
+                    ),
+                    Chip(
+                      backgroundColor: primaryColor,
                       label: const Text(
                         'MAHASISWA',
                         style: TextStyle(color: Colors.white),
                       ),
                       avatar: const Icon(Icons.person, color: Colors.white),
                     ),
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            // ===== TUGAS =====
-            const Text(
-              'Tugas Yang Akan Datang',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-
-            _tugasCard(),
-
-            const SizedBox(height: 20),
-
-            // ===== PENGUMUMAN =====
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text(
-                  'Pengumuman Terakhir',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  ],
                 ),
-                Text('Lihat Semua', style: TextStyle(color: Colors.blue)),
-              ],
-            ),
-
-            const SizedBox(height: 10),
-
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                'assets/images/gmbrpengumuman.png',
-                fit: BoxFit.cover,
               ),
-            ),
 
-            const SizedBox(height: 20),
+              const SizedBox(height: 20),
 
-            // ===== PROGRES KELAS =====
-            const Text(
-              'Progres Kelas',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Expanded(
-              child: ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                children: [
-                  _progressItem(
-                    imagePath: 'assets/images/uiux.png',
-                    title: 'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
-                    value: 0.89,
+              // ===== Tugas =====
+              const Text(
+                'Tugas Yang Akan Datang',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Color(0xFF0B0547),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: const [
+                    Text(
+                      'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'Tugas 01 – UID Android Mobile Game',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    SizedBox(height: 16),
+                    Text(
+                      'Waktu Pengumpulan\nJumat 26 Februari, 23:59 WIB',
+                      style: TextStyle(color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              // ===== Pengumuman =====
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    'Pengumuman Terakhir',
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  _progressItem(
-                    imagePath: 'assets/images/pkn.png',
-                    title: 'KEWARGANEGARAAN',
-                    value: 0.86,
-                  ),
-                  _progressItem(
-                    imagePath: 'assets/images/so.png',
-                    title: 'SISTEM OPERASI',
-                    value: 0.90,
-                  ),
-                  _progressItem(
-                    imagePath: 'assets/images/pmm.png',
-                    title: 'PEMROGRAMAN MULTIMEDIA INTERAKTIF',
-                    value: 0.90,
-                  ),
-                  _progressItem(
-                    imagePath: 'assets/images/inggris.png',
-                    title: 'BAHASA INGGRIS: BUSINESS & SCIENTIFIC',
-                    value: 0.90,
-                  ),
-                  _progressItem(
-                    imagePath: 'assets/images/olahraga.png',
-                    title: 'OLAH RAGA',
-                    value: 0.90,
-                  ),
+                  Text('Lihat Semua', style: TextStyle(color: Colors.blue)),
                 ],
               ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
-  Widget _tugasCard() {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Color(0xFF0B0547),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Column(
-        children: const [
-          Text(
-            'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+              const SizedBox(height: 10),
+
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  'assets/image/gmbrpengumuman.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              // ===== Progres Kelas =====
+              const Text(
+                'Progres Kelas',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+
+              const SizedBox(height: 10),
+
+              _progressItem(
+                imagePath: 'assets/images/uiux.png',
+                title: 'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
+                value: 0.89,
+              ),
+              _progressItem(
+                imagePath: 'assets/images/pkn.png',
+                title: 'KEWARGANEGARAAN',
+                value: 0.86,
+              ),
+              _progressItem(
+                imagePath: 'assets/images/so.png',
+                title: 'SISTEM OPERASI',
+                value: 0.90,
+              ),
+              _progressItem(
+                imagePath: 'assets/images/pmm.png',
+                title: 'PEMROGRAMAN MULTIMEDIA INTERAKTIF',
+                value: 0.90,
+              ),
+              _progressItem(
+                imagePath: 'assets/images/inggris.png',
+                title: 'BAHASA INGGRIS: BUSINESS & SCIENTIFIC',
+                value: 0.90,
+              ),
+              _progressItem(
+                imagePath: 'assets/images/olahraga.png',
+                title: 'OLAH RAGA',
+                value: 0.90,
+              ),
+              const SizedBox(height: 80),
+            ],
           ),
-          SizedBox(height: 8),
-          Text(
-            'Tugas 01 – UID Android Mobile Game',
-            style: TextStyle(color: Colors.white),
-          ),
-          SizedBox(height: 16),
-          Text(
-            'Waktu Pengumpulan\nJumat 26 Februari, 23:59 WIB',
-            style: TextStyle(color: Colors.white),
-            textAlign: TextAlign.center,
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -237,7 +225,7 @@ class Beranda extends StatelessWidget {
                 LinearProgressIndicator(
                   value: value,
                   minHeight: 6,
-                  color: Color(0xFF0B0547),
+                  color: Colors.red.shade700,
                   backgroundColor: Colors.grey.shade300,
                 ),
 
