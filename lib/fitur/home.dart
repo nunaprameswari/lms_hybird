@@ -174,12 +174,12 @@ class Beranda extends StatelessWidget {
               ),
               _progressItem(
                 imagePath: 'assets/image/multimedia.png',
-                title: 'OLAH RAGA',
+                title: 'PEMROGRAMAN MULTIMEDIA INTERAKTIF\nD4SM-43-04 [TPR]',
                 value: 0.90,
               ),
               _progressItem(
                 imagePath: 'assets/image/olahraga.png',
-                title: 'OLAH RAGA',
+                title: 'OLAH RAGA\nD3TT-44-02 [EYR]',
                 value: 0.90,
               ),
               const SizedBox(height: 80),
@@ -230,7 +230,7 @@ class Beranda extends StatelessWidget {
                 LinearProgressIndicator(
                   value: value,
                   minHeight: 6,
-                  color: Colors.red.shade700,
+                  color: Color(0xFF0B0547),
                   backgroundColor: Colors.grey.shade300,
                 ),
 
