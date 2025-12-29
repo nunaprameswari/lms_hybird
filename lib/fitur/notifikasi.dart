@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'isiprofile.dart';
+// import 'isiprofile.dart';
 
-class NotifikasiPage extends StatelessWidget {
-  final List<Map<String, dynamic>> listNotifikasi = [
+class Notifikasi extends StatelessWidget {
+  const Notifikasi({super.key});
+
+  static const List<Map<String, dynamic>> listNotifikasi = [
     {
       "icon": Icons.description_outlined,
       "pesan":
@@ -37,56 +39,40 @@ class NotifikasiPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Text(
-          "Notifikasi",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-      ),
-      body: ListView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        itemCount: listNotifikasi.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(listNotifikasi[index]["icon"], size: 30),
-                SizedBox(width: 15),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        listNotifikasi[index]["pesan"],
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                        ),
+    return ListView.builder(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      itemCount: Notifikasi.listNotifikasi.length,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Notifikasi.listNotifikasi[index]["icon"], size: 30),
+              SizedBox(width: 15),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      Notifikasi.listNotifikasi[index]["pesan"],
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        listNotifikasi[index]["waktu"],
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
-                      ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      Notifikasi.listNotifikasi[index]["waktu"],
+                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          );
-        },
-      ),
-      bottomNavigationBar: CustomBottomNav(),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

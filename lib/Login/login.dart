@@ -120,7 +120,7 @@ class _LoginLmsState extends State<LoginLms> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Beranda(),
+                              builder: (context) => const HomePage(),
                             ),
                           );
                         },
