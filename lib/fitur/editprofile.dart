@@ -10,7 +10,7 @@ class Editprofile extends StatelessWidget {
       height: 280,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Color(0xFFB34B4B),
+        color: Color(0xFF0B0547),
       ), // Warna merah sesuai gambar
       child: Column(
         children: [
@@ -109,7 +109,7 @@ class CustomBottomNav extends StatelessWidget {
     return Container(
       height: 80,
       decoration: BoxDecoration(
-        color: Color(0xFFB34B4B),
+        color: Color(0xFF0B0547),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),

@@ -237,7 +237,7 @@ class Beranda extends StatelessWidget {
                 LinearProgressIndicator(
                   value: value,
                   minHeight: 6,
-                  color: Colors.red.shade700,
+                  color: Color(0xFF0B0547),
                   backgroundColor: Colors.grey.shade300,
                 ),
 

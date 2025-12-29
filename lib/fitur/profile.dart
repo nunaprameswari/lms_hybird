@@ -18,7 +18,7 @@ class _ProfileState extends State<Profile> {
         children: [
           Column(
             children: [
-              // Header Merah
+              // Header Biru
               Editprofile(name: "DANDY CANDRA PRATAMA"),
 
               // Spasi untuk Tab Bar yang melayang

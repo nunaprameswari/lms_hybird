@@ -26,7 +26,7 @@ class AboutMeTab extends StatelessWidget {
         Align(
           alignment: Alignment.centerRight,
           child: ElevatedButton.icon(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.red[900]),
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xFF0B0547)),
             onPressed: () {},
             icon: Icon(Icons.logout, color: Colors.white),
             label: Text("Log Out", style: TextStyle(color: Colors.white)),
