@@ -14,7 +14,7 @@ class Editprofile extends StatelessWidget {
       ), // Warna merah sesuai gambar
       child: Column(
         children: [
-          SizedBox(height: 50),
+          SizedBox(height: 35),
           Align(
             alignment: Alignment.centerLeft,
             child: IconButton(
@@ -29,7 +29,7 @@ class Editprofile extends StatelessWidget {
               'https://via.placeholder.com/150',
             ), // Ganti dengan image path Anda
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           Text(
             name,
             style: TextStyle(
