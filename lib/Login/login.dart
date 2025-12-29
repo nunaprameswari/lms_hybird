@@ -22,10 +22,7 @@ class _LoginLmsState extends State<LoginLms> {
           SizedBox(
             height: 280,
             width: double.infinity,
-            child: Image.asset(
-              'assets/images/gedunguim.jpg',
-              fit: BoxFit.cover,
-            ),
+            child: Image.asset('assets/image/gedunguim.jpg', fit: BoxFit.cover),
           ),
 
           // ===== Login Card =====
@@ -49,7 +46,7 @@ class _LoginLmsState extends State<LoginLms> {
                         radius: 30,
                         backgroundColor: const Color(0xFF0B0547),
                         child: Image.asset(
-                          'assets/images/logohybird',
+                          'assets/image/logohybird.png',
                           width: 30,
                           color: Colors.white,
                         ),
