@@ -148,32 +148,37 @@ class Beranda extends StatelessWidget {
               const SizedBox(height: 10),
 
               _progressItem(
-                imagePath: 'assets/images/uiux.png',
+                imagePath: 'assets/image/uiux.png',
                 title: 'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
                 value: 0.89,
               ),
               _progressItem(
-                imagePath: 'assets/images/pkn.png',
+                imagePath: 'assets/image/ppkn.png',
                 title: 'KEWARGANEGARAAN',
                 value: 0.86,
               ),
               _progressItem(
-                imagePath: 'assets/images/so.png',
+                imagePath: 'assets/image/system.png',
                 title: 'SISTEM OPERASI',
                 value: 0.90,
               ),
               _progressItem(
-                imagePath: 'assets/images/pmm.png',
+                imagePath: 'assets/image/pemrograman.png',
                 title: 'PEMROGRAMAN MULTIMEDIA INTERAKTIF',
                 value: 0.90,
               ),
               _progressItem(
-                imagePath: 'assets/images/inggris.png',
+                imagePath: 'assets/image/bhsinggris.png',
                 title: 'BAHASA INGGRIS: BUSINESS & SCIENTIFIC',
                 value: 0.90,
               ),
               _progressItem(
-                imagePath: 'assets/images/olahraga.png',
+                imagePath: 'assets/image/multimedia.png',
+                title: 'OLAH RAGA',
+                value: 0.90,
+              ),
+              _progressItem(
+                imagePath: 'assets/image/olahraga.png',
                 title: 'OLAH RAGA',
                 value: 0.90,
               ),
