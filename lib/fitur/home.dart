@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lms_hybird/fitur/profile.dart';
 
 class Beranda extends StatelessWidget {
   const Beranda({super.key});
@@ -60,13 +61,21 @@ class Beranda extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Chip(
-                      backgroundColor: primaryColor,
-                      label: const Text(
-                        'MAHASISWA',
-                        style: TextStyle(color: Colors.white),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Profile()),
+                        );
+                      },
+                      child: Chip(
+                        backgroundColor: primaryColor,
+                        label: const Text(
+                          'MAHASISWA',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        avatar: const Icon(Icons.person, color: Colors.white),
                       ),
-                      avatar: const Icon(Icons.person, color: Colors.white),
                     ),
                   ],
                 ),
