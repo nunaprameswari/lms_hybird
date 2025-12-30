@@ -103,9 +103,12 @@ class HomePage extends StatelessWidget {
                       // backgroundColor: primaryColor,
                       label: const Text(
                         'MAHASISWA',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Color(0xFF0B0547)),
                       ),
-                      avatar: const Icon(Icons.person, color: Colors.white),
+                      avatar: const Icon(
+                        Icons.person,
+                        color: Color(0xFF0B0547),
+                      ),
                     ),
                   ),
                 ],
