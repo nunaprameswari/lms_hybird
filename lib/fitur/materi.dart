@@ -13,8 +13,11 @@ class MateriPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFB34B4B),
-        title: Text(namaKelas, style: const TextStyle(fontSize: 14)),
+        backgroundColor: const Color(0xFF0B0547),
+        title: Text(
+          namaKelas,
+          style: const TextStyle(fontSize: 14, color: Colors.white),
+        ),
       ),
       body: Column(
         children: [
@@ -131,7 +134,7 @@ class MateriItem extends StatelessWidget {
             ElevatedButton(
               onPressed: onButtonPressed,
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFB34B4B),
+                backgroundColor: const Color(0xFF0B0547),
                 foregroundColor: Colors.white,
               ),
               child: const Text("Lihat Materi"),

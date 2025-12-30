@@ -8,8 +8,11 @@ class TugasPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFB34B4B),
-        title: const Text("Tugas Dan Kuis"),
+        backgroundColor: const Color(0xFF0B0547),
+        title: const Text(
+          "Tugas Dan Kuis",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

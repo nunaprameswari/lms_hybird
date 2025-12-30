@@ -28,7 +28,7 @@ class _QuizReviewState extends State<QuizReview> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xFFB34B4B), // Warna merah sesuai gambar
+        backgroundColor: const Color(0xFF0B0547), // Warna merah sesuai gambar
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
