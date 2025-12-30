@@ -43,8 +43,8 @@ class DetailPengumuman extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.blue[50],
               ),
-              child: Image.network(
-                'https://via.placeholder.com/400x200', // Ganti dengan asset gambar maintenance Anda
+              child: Image.asset(
+                'assets/image/gmbrpengumuman.png', // Ganti dengan asset gambar maintenance Anda
                 fit: BoxFit.cover,
               ),
             ),
