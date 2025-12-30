@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lms_hybird/fitur/materi2.dart';
 import 'tugas.dart';
 import 'materi_sheet.dart';
+// import 'materi2.dart';
 
 class MateriPage extends StatelessWidget {
   final String namaKelas;
@@ -77,8 +79,7 @@ class MateriPage extends StatelessWidget {
                       context: context,
                       isScrollControlled: true,
                       backgroundColor: Colors.transparent,
-                      builder: (context) =>
-                          const MateriDetailSheet(pertemuan: "Pertemuan 2"),
+                      builder: (context) => const MateriKeDua(),
                     );
                   },
                 ),
