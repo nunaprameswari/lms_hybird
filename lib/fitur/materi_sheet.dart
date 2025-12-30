@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 
 class MateriDetailSheet extends StatelessWidget {
-  const MateriDetailSheet({super.key});
+  final String pertemuan;
+
+  const MateriDetailSheet({super.key, required this.pertemuan});
+
+  String _getTitle() {
+    switch (pertemuan) {
+      case "Pertemuan 1":
+        return "Pengantar User Interface Design";
+      case "Pertemuan 2":
+        return "Konsep User Interface Design";
+      case "Pertemuan 3":
+        return "Interaksi pada UI Design";
+      default:
+        return "Materi";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +43,13 @@ class MateriDetailSheet extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text(
-                "Pengantar User Interface Design",
+              Text(
+                _getTitle(),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 20),
               Expanded(
@@ -130,40 +148,99 @@ class MateriDetailSheet extends StatelessWidget {
     return ListView(
       controller: controller,
       padding: const EdgeInsets.all(16),
-      children: const [
-        Text(
+      children: [
+        const Text(
           "Tugas dan Kuis",
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
-        SizedBox(height: 8),
-        Text(
+        const SizedBox(height: 8),
+        const Text(
           "Berikut adalah daftar tugas dan kuis yang harus diselesaikan untuk materi ini.",
           style: TextStyle(fontSize: 14, height: 1.5, color: Colors.black87),
           textAlign: TextAlign.justify,
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         // Daftar tugas dan kuis
-        AttachmentItem(
+        _buildTugasItem(
           icon: Icons.assignment,
           title: "Tugas 1: Pengantar UI Design",
-          isChecked: false,
+          subtitle: "Deadline: 15 Oktober 2023",
+          isCompleted: false,
         ),
-        AttachmentItem(
+        _buildTugasItem(
           icon: Icons.quiz,
           title: "Kuis 1: Konsep Dasar UI",
-          isChecked: true,
+          subtitle: "Durasi: 30 menit",
+          isCompleted: true,
         ),
-        AttachmentItem(
+        _buildTugasItem(
           icon: Icons.assignment,
           title: "Tugas 2: Prinsip Desain",
-          isChecked: false,
+          subtitle: "Deadline: 20 Oktober 2023",
+          isCompleted: false,
         ),
-        AttachmentItem(
+        _buildTugasItem(
           icon: Icons.quiz,
           title: "Kuis 2: Interaksi Pengguna",
-          isChecked: false,
+          subtitle: "Durasi: 45 menit",
+          isCompleted: false,
         ),
       ],
+    );
+  }
+
+  Widget _buildTugasItem({
+    required IconData icon,
+    required String title,
+    required String subtitle,
+    required bool isCompleted,
+  }) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [BoxShadow(color: Colors.grey[200]!, blurRadius: 6)],
+      ),
+      child: Row(
+        children: [
+          Icon(icon, size: 24, color: Colors.black54),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  subtitle,
+                  style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                ),
+              ],
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // Handle tugas action
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: isCompleted
+                  ? Colors.green
+                  : const Color(0xFFB34B4B),
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            ),
+            child: Text(isCompleted ? "Selesai" : "Kerjakan"),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -53,17 +53,36 @@ class MateriPage extends StatelessWidget {
           Expanded(
             child: ListView(
               padding: const EdgeInsets.all(16),
-              children: const [
+              children: [
                 MateriItem(
                   pertemuan: "Pertemuan 1",
                   title: "01 - Pengantar User Interface Design",
                   showButton: true,
+                  onButtonPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      backgroundColor: Colors.transparent,
+                      builder: (context) =>
+                          const MateriDetailSheet(pertemuan: "Pertemuan 1"),
+                    );
+                  },
                 ),
                 MateriItem(
                   pertemuan: "Pertemuan 2",
                   title: "02 - Konsep User Interface Design",
+                  showButton: true,
+                  onButtonPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      backgroundColor: Colors.transparent,
+                      builder: (context) =>
+                          const MateriDetailSheet(pertemuan: "Pertemuan 2"),
+                    );
+                  },
                 ),
-                MateriItem(
+                const MateriItem(
                   pertemuan: "Pertemuan 3",
                   title: "03 - Interaksi pada UI Design",
                 ),
@@ -80,12 +99,14 @@ class MateriItem extends StatelessWidget {
   final String pertemuan;
   final String title;
   final bool showButton;
+  final VoidCallback? onButtonPressed;
 
   const MateriItem({
     super.key,
     required this.pertemuan,
     required this.title,
     this.showButton = false,
+    this.onButtonPressed,
   });
 
   @override
@@ -107,15 +128,7 @@ class MateriItem extends StatelessWidget {
           if (showButton) ...[
             const SizedBox(height: 10),
             ElevatedButton(
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  isScrollControlled:
-                      true, // Agar sheet bisa ditarik hampir penuh ke atas
-                  backgroundColor: Colors.transparent,
-                  builder: (context) => const MateriDetailSheet(),
-                );
-              },
+              onPressed: onButtonPressed,
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFB34B4B),
                 foregroundColor: Colors.white,
