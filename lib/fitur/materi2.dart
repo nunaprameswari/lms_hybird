@@ -52,7 +52,7 @@ class MateriKeDua extends StatelessWidget {
                         child: TabBarView(
                           children: [
                             _buildLampiranContent(controller),
-                            const Center(child: Text("Belum ada tugas")),
+                            _buildTugasContent2(controller),
                           ],
                         ),
                       ),
@@ -110,6 +110,129 @@ class MateriKeDua extends StatelessWidget {
           isChecked: true,
         ),
       ],
+    );
+  }
+
+  Widget _buildTugasContent2(ScrollController controller) {
+    return ListView(
+      controller: controller,
+      padding: const EdgeInsets.all(16),
+      children: [
+        const Text(
+          "Deskripsi",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        ),
+        const SizedBox(height: 8),
+        const Text(
+          "Konsep dasar User Interface Design akan dipelajari bagaimana membangun sebuah Interaction Design pada antarmuka. Interaction ini sangat penting untuk aplikasi berkomunikasi dengan pengguna...",
+          style: TextStyle(fontSize: 14, height: 1.5, color: Colors.black87),
+          textAlign: TextAlign.justify,
+        ),
+        const SizedBox(height: 20),
+
+        // Item Kuis (Sesuai Gambar Kuis 2.png)
+        _buildTaskCard(
+          icon: Icons.quiz_outlined,
+          title: "Quiz Review 01",
+          description:
+              "Silahkan kerjakan kuis ini dalam waktu 15 menit sebagai nilai pertama komponen kuis. Jangan lupa klik tombol Submit Answer setelah menjawab seluruh pertanyaan. Kerjakan sebelum hari Jum'at, 26 Februari 2021 jam 23:59 WIB.",
+          isCompleted: true, // Centang Hijau
+        ),
+
+        const SizedBox(height: 12),
+
+        // Item Tugas (Sesuai Gambar Kuis 2.png)
+        _buildTaskCard(
+          icon: Icons.assignment_outlined,
+          title: "Tugas 01 - UID Android Mobile Game",
+          description:
+              "1. Buatlah desain tampilan (antarmuka) pada aplikasi mobile game FPS (First Person Shooter) yang akan menjadi tugas pada mata kuliah Pemrograman Aplikasi Permainan.\n2. Desain yang dibuat harus melingkupi seluruh tampilan pada aplikasi/game, dari pertama kali aplikasi ...........",
+          isCompleted: false, // Centang Abu-abu
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTaskCard({
+    required IconData icon,
+    required String title,
+    required String description,
+    required bool isCompleted,
+  }) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(color: Colors.grey.shade300),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 5,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: IntrinsicHeight(
+        // Agar garis pemisah mengikuti tinggi konten
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Sisi Kiri (Ikon)
+            Container(
+              width: 60,
+              padding: const EdgeInsets.all(12),
+              child: Center(child: Icon(icon, size: 30, color: Colors.black87)),
+            ),
+            // Garis Pemisah Vertikal
+            VerticalDivider(
+              width: 1,
+              color: Colors.grey.shade300,
+              thickness: 1,
+            ),
+            // Sisi Kanan (Teks & Status)
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          title,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
+                        ),
+                        Icon(
+                          Icons.check_circle,
+                          color: isCompleted
+                              ? Colors.green
+                              : Colors.grey.shade400,
+                          size: 20,
+                        ),
+                      ],
+                    ),
+                    const Divider(),
+                    Text(
+                      description,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: Colors.black54,
+                        height: 1.4,
+                      ),
+                      maxLines: 4,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
