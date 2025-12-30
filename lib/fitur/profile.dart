@@ -19,7 +19,7 @@ class _ProfileState extends State<Profile> {
           Column(
             children: [
               // Header Biru
-              Isiprofile(name: "DANDY CANDRA PRATAMA"),
+              Isiprofile(name: "Nindia Prameswari Putri Cahyono"),
 
               // Spasi untuk Tab Bar yang melayang
               SizedBox(height: 40),
