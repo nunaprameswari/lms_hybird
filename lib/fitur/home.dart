@@ -84,7 +84,7 @@ class HomePage extends StatelessWidget {
                     children: const [
                       Text('Hallo,', style: TextStyle(color: Colors.grey)),
                       Text(
-                        'Nindia Prameswari Putri Cahyono',
+                        'Nindia Prameswari P.C',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,

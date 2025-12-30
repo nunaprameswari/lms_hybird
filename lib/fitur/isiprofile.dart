@@ -32,8 +32,8 @@ class Isiprofile extends StatelessWidget {
           const CircleAvatar(
             radius: 55,
             backgroundColor: Colors.white24,
-            backgroundImage: NetworkImage(
-              'https://via.placeholder.com/150',
+            backgroundImage: AssetImage(
+              'assets/image/profil.jpeg',
             ), // Ganti dengan image path Anda
           ),
           const SizedBox(height: 10),
