@@ -6,14 +6,39 @@ class KelasSaya extends StatelessWidget {
 
   static const List<Map<String, dynamic>> listKelas = [
     {
-      "title": "DESAIN ANTARMUKA & PENGALAMAN PENGGUNA\nD4SM-42-03 [ADY]",
+      "title": "DESAIN ANTARMUKA & PENGALAMAN PENGGUNA",
       "image": "assets/image/uiux.png",
       "progress": 0.89,
     },
     {
-      "title": "KEWARGANEGARAAN\nD4SM-41-GAB1 [BBO]",
+      "title": "KEWARGANEGARAAN",
       "image": "assets/image/ppkn.png",
       "progress": 0.86,
+    },
+    {
+      "title": "SISTEM OPERASI",
+      "image": "assets/image/system.png",
+      "progress": 0.90,
+    },
+    {
+      "title": "PEMROGRAMAN MULTIMEDIA INTERAKTIF",
+      "image": "assets/image/pemrograman.png",
+      "progress": 0.90,
+    },
+    {
+      "title": "BAHASA INGGRIS: BUSINESS & SCIENTIFIC",
+      "image": "assets/image/bhsinggris.png",
+      "progress": 0.90,
+    },
+    {
+      "title": "PEMROGRAMAN MULTIMEDIA INTERAKTIF\nD4SM-43-04 [TPR]",
+      "image": "assets/image/multimedia.png",
+      "progress": 0.90,
+    },
+    {
+      "title": "OLAH RAGA\nD3TT-44-02 [EYR]",
+      "image": "assets/image/olahraga.png",
+      "progress": 0.90,
     },
   ];
 
@@ -21,8 +46,8 @@ class KelasSaya extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Kelas Saya"),
-        backgroundColor: const Color(0xFFB34B4B),
+        title: const Text("Kelas Saya", style: TextStyle(color: Colors.white)),
+        backgroundColor: Color(0xFF0B0547),
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
@@ -70,7 +95,7 @@ class KelasSaya extends StatelessWidget {
                         const SizedBox(height: 8),
                         LinearProgressIndicator(
                           value: kelas["progress"],
-                          color: const Color(0xFFB34B4B),
+                          color: const Color(0xFF0B0547),
                           backgroundColor: Colors.grey.shade300,
                         ),
                         const SizedBox(height: 4),
