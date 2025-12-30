@@ -54,8 +54,8 @@ class MateriDetailSheet extends StatelessWidget {
                           children: [
                             // Konten Tab Lampiran Materi
                             _buildLampiranContent(controller),
-                            // Konten Tab Tugas (Kosongkan dulu)
-                            const Center(child: Text("Belum ada tugas")),
+                            // Konten Tab Tugas dan Kuis
+                            _buildTugasContent(controller),
                           ],
                         ),
                       ),
@@ -87,13 +87,82 @@ class MateriDetailSheet extends StatelessWidget {
         ),
         SizedBox(height: 20),
         // Daftar item lampiran sesuai gambar
-        AttachmentItem(icon: Icons.link, title: "Zoom Meeting Syncronous", isChecked: true),
-        AttachmentItem(icon: Icons.description_outlined, title: "Pengantar User Interface Design", isChecked: false),
-        AttachmentItem(icon: Icons.description_outlined, title: "Empat Teori Dasar Antarmuka Pengguna", isChecked: false),
-        AttachmentItem(icon: Icons.description_outlined, title: "Empat Teori Dasar Antarmuka Pengguna", isChecked: true),
-        AttachmentItem(icon: Icons.video_library_outlined, title: "User Interface Design for Beginner", isChecked: true),
-        AttachmentItem(icon: Icons.link, title: "20 Prinsip Desain", isChecked: true),
-        AttachmentItem(icon: Icons.link, title: "Best Practice UI Design", isChecked: true),
+        AttachmentItem(
+          icon: Icons.link,
+          title: "Zoom Meeting Syncronous",
+          isChecked: true,
+        ),
+        AttachmentItem(
+          icon: Icons.description_outlined,
+          title: "Pengantar User Interface Design",
+          isChecked: false,
+        ),
+        AttachmentItem(
+          icon: Icons.description_outlined,
+          title: "Empat Teori Dasar Antarmuka Pengguna",
+          isChecked: false,
+        ),
+        AttachmentItem(
+          icon: Icons.description_outlined,
+          title: "Empat Teori Dasar Antarmuka Pengguna",
+          isChecked: true,
+        ),
+        AttachmentItem(
+          icon: Icons.video_library_outlined,
+          title: "User Interface Design for Beginner",
+          isChecked: true,
+        ),
+        AttachmentItem(
+          icon: Icons.link,
+          title: "20 Prinsip Desain",
+          isChecked: true,
+        ),
+        AttachmentItem(
+          icon: Icons.link,
+          title: "Best Practice UI Design",
+          isChecked: true,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTugasContent(ScrollController controller) {
+    return ListView(
+      controller: controller,
+      padding: const EdgeInsets.all(16),
+      children: const [
+        Text(
+          "Tugas dan Kuis",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        ),
+        SizedBox(height: 8),
+        Text(
+          "Berikut adalah daftar tugas dan kuis yang harus diselesaikan untuk materi ini.",
+          style: TextStyle(fontSize: 14, height: 1.5, color: Colors.black87),
+          textAlign: TextAlign.justify,
+        ),
+        SizedBox(height: 20),
+        // Daftar tugas dan kuis
+        AttachmentItem(
+          icon: Icons.assignment,
+          title: "Tugas 1: Pengantar UI Design",
+          isChecked: false,
+        ),
+        AttachmentItem(
+          icon: Icons.quiz,
+          title: "Kuis 1: Konsep Dasar UI",
+          isChecked: true,
+        ),
+        AttachmentItem(
+          icon: Icons.assignment,
+          title: "Tugas 2: Prinsip Desain",
+          isChecked: false,
+        ),
+        AttachmentItem(
+          icon: Icons.quiz,
+          title: "Kuis 2: Interaksi Pengguna",
+          isChecked: false,
+        ),
       ],
     );
   }
@@ -121,16 +190,18 @@ class AttachmentItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(30), // Membuat bentuk kapsul
         border: Border.all(color: Colors.grey[200]!),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4, offset: const Offset(0, 2))
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 4,
+            offset: const Offset(0, 2),
+          ),
         ],
       ),
       child: Row(
         children: [
           Icon(icon, size: 20, color: Colors.black54),
           const SizedBox(width: 12),
-          Expanded(
-            child: Text(title, style: const TextStyle(fontSize: 14)),
-          ),
+          Expanded(child: Text(title, style: const TextStyle(fontSize: 14))),
           Icon(
             Icons.check_circle,
             color: isChecked ? Colors.green : Colors.grey[350],
