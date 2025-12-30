@@ -5,75 +5,48 @@ class TugasPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: [
-        _tugasItem(
-          label: 'QUIZ',
-          title: 'Quiz Review 01',
-          deadline: '26 Februari 2021 23:59 WIB',
-          done: true,
-        ),
-        _tugasItem(
-          label: 'Tugas',
-          title: 'Tugas 01 – UID Android Mobile Game',
-          deadline: '26 Februari 2021 23:59 WIB',
-          done: false,
-        ),
-        _tugasItem(
-          label: 'QUIZ',
-          title: 'Kuis – Assessment 2',
-          deadline: '26 Februari 2021 23:59 WIB',
-          done: true,
-        ),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFB34B4B),
+        title: const Text("Tugas Dan Kuis"),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          TugasItem(label: "QUIZ", title: "Quiz Review 01"),
+          TugasItem(
+            label: "TUGAS",
+            title: "Tugas 01 – UID Android Mobile Game",
+          ),
+          TugasItem(label: "QUIZ", title: "Kuis – Assessment 2"),
+        ],
+      ),
     );
   }
+}
 
-  Widget _tugasItem({
-    required String label,
-    required String title,
-    required String deadline,
-    required bool done,
-  }) {
+class TugasItem extends StatelessWidget {
+  final String label;
+  final String title;
+
+  const TugasItem({super.key, required this.label, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 14),
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
+        boxShadow: [BoxShadow(color: Colors.grey.shade200, blurRadius: 6)],
       ),
-      child: Row(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(label == 'QUIZ' ? Icons.quiz : Icons.assignment, size: 32),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Chip(
-                  label: Text(label),
-                  backgroundColor: Colors.blue,
-                  labelStyle: const TextStyle(color: Colors.white),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  title,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  'Tenggat Waktu : $deadline',
-                  style: const TextStyle(fontSize: 11, color: Colors.grey),
-                ),
-              ],
-            ),
-          ),
-          Icon(
-            done ? Icons.check_circle : Icons.radio_button_unchecked,
-            color: done ? Colors.green : Colors.grey,
-          ),
+          Chip(label: Text(label)),
+          const SizedBox(height: 6),
+          Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
         ],
       ),
     );
