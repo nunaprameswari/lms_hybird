@@ -150,97 +150,42 @@ class MateriDetailSheet extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       children: [
         const Text(
-          "Tugas dan Kuis",
+          "Deskripsi",
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         const SizedBox(height: 8),
         const Text(
-          "Berikut adalah daftar tugas dan kuis yang harus diselesaikan untuk materi ini.",
+          "Antarmuka yang dibangun harus memperhatikan prinsip-prinsip desain yang ada. Hal ini diharapkan agar antarmuka yang dibangun bukan hanya menarik secara visual tetapi dengan memperhatikan kaidah-kaidah prinsip desain diharapkan akan mendukung pengguna dalam menggunakan produk secara baik. Pelajaran mengenai prinsip UID ini sudah pernah diajarkan dalam mata kuliah Implementasi Desain Antarmuka Pengguna tetap pada matakuliah ini akan direview kembali sehingga dapat menjadi bekal saat memasukki materi mengenai User Experience",
           style: TextStyle(fontSize: 14, height: 1.5, color: Colors.black87),
           textAlign: TextAlign.justify,
         ),
-        const SizedBox(height: 20),
-        // Daftar tugas dan kuis
-        _buildTugasItem(
-          icon: Icons.assignment,
-          title: "Tugas 1: Pengantar UI Design",
-          subtitle: "Deadline: 15 Oktober 2023",
-          isCompleted: false,
-        ),
-        _buildTugasItem(
-          icon: Icons.quiz,
-          title: "Kuis 1: Konsep Dasar UI",
-          subtitle: "Durasi: 30 menit",
-          isCompleted: true,
-        ),
-        _buildTugasItem(
-          icon: Icons.assignment,
-          title: "Tugas 2: Prinsip Desain",
-          subtitle: "Deadline: 20 Oktober 2023",
-          isCompleted: false,
-        ),
-        _buildTugasItem(
-          icon: Icons.quiz,
-          title: "Kuis 2: Interaksi Pengguna",
-          subtitle: "Durasi: 45 menit",
-          isCompleted: false,
+        const SizedBox(height: 40),
+        // Bagian Ilustrasi Kosong sesuai gambar Kuis.png
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Ganti dengan path asset gambar Anda jika sudah ada
+              Image.asset('assets/image/happy.png', height: 200),
+              // Sementara menggunakan placeholder icon/image agar kode tidak error:
+              // Icon(
+              //   Icons.sentiment_very_satisfied_outlined,
+              //   size: 150,
+              //   color: Colors.orange[200],
+              // ),
+              const SizedBox(height: 20),
+              const Text(
+                "Tidak Ada Tugas Dan Kuis Hari Ini",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+            ],
+          ),
         ),
       ],
-    );
-  }
-
-  Widget _buildTugasItem({
-    required IconData icon,
-    required String title,
-    required String subtitle,
-    required bool isCompleted,
-  }) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [BoxShadow(color: Colors.grey[200]!, blurRadius: 6)],
-      ),
-      child: Row(
-        children: [
-          Icon(icon, size: 24, color: Colors.black54),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  subtitle,
-                  style: TextStyle(fontSize: 12, color: Colors.grey[600]),
-                ),
-              ],
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              // Handle tugas action
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: isCompleted
-                  ? Colors.green
-                  : const Color(0xFFB34B4B),
-              foregroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            ),
-            child: Text(isCompleted ? "Selesai" : "Kerjakan"),
-          ),
-        ],
-      ),
     );
   }
 }
