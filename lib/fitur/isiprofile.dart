@@ -3,43 +3,43 @@ import 'package:lms_hybird/fitur/home.dart';
 
 class Isiprofile extends StatelessWidget {
   final String name;
-  Isiprofile({required this.name});
+  const Isiprofile({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 280,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xFF0B0547),
       ), // Warna merah sesuai gambar
       child: Column(
         children: [
-          SizedBox(height: 35),
+          const SizedBox(height: 35),
           Align(
             alignment: Alignment.centerLeft,
             child: IconButton(
-              icon: Icon(Icons.arrow_back, color: Colors.white),
+              icon: const Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () {
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => Beranda()),
+                  MaterialPageRoute(builder: (context) => const Beranda()),
                   (route) => false,
                 );
               },
             ),
           ),
-          CircleAvatar(
+          const CircleAvatar(
             radius: 55,
             backgroundColor: Colors.white24,
             backgroundImage: NetworkImage(
               'https://via.placeholder.com/150',
             ), // Ganti dengan image path Anda
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             name,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -55,15 +55,19 @@ class CustomTabBar extends StatelessWidget {
   final int selectedIndex;
   final Function(int) onTabTap;
 
-  CustomTabBar({required this.selectedIndex, required this.onTabTap});
+  const CustomTabBar({
+    super.key,
+    required this.selectedIndex,
+    required this.onTabTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.all(Radius.circular(15)),
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
@@ -92,14 +96,14 @@ class CustomTabBar extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.w600,
               color: Colors.black87,
             ),
           ),
           if (isActive)
             Container(
-              margin: EdgeInsets.only(top: 5),
+              margin: const EdgeInsets.only(top: 5),
               height: 3,
               width: 30,
               color: Colors.grey,
@@ -123,7 +127,7 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
   Widget build(BuildContext context) {
     return Container(
       height: 80,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xFF0B0547),
         // borderRadius: BorderRadius.only(
         // topLeft: Radius.circular(30),
@@ -164,7 +168,7 @@ class _CustomBottomNavState extends State<CustomBottomNav> {
       splashColor: Colors.white24,
       highlightColor: Colors.transparent,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
